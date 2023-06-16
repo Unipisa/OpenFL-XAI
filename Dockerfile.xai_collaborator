@@ -1,0 +1,10 @@
+# Copyright (C) 2023 AI&RD Research Group, Department of Information Engineering, University of Pisa
+# SPDX-License-Identifier: Apache-2.0
+
+FROM openfl_xai
+
+COPY ./openfl-xai_workspaces/xai_tsk_frbs /current_workspace
+WORKDIR /current_workspace
+
+COPY ./start_collaborator.py ./start_collaborator.py
+CMD ["python3.8", "start_collaborator.py"]

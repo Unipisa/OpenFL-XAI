@@ -1,0 +1,12 @@
+# Copyright (C) 2023 AI&RD Research Group, Department of Information Engineering, University of Pisa
+# SPDX-License-Identifier: Apache-2.0
+
+FROM openfl_xai
+
+
+COPY ./openfl-xai_workspaces/xai_tsk_frbs /current_workspace
+WORKDIR /current_workspace
+COPY ./certificates/aggregator_cert_folder.zip ./aggregator_cert_folder.zip
+RUN unzip -n aggregator_cert_folder.zip
+RUN mkdir save
+CMD fx aggregator start

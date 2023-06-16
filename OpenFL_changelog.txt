@@ -1,0 +1,28 @@
+This file summarizes the modifications introduced in OpenFL-XAI (method overriding of OpenFL base components)
+
+AggregatorXAI, extends openfl.components.Aggregator 
+    overridden methods:
+        _compute_validation_related_task_metrics(self, task_name)
+        _end_of_round_check(self)
+
+CollaboratorXAI, extends openfl.components.Collaborator
+    overridden methods:
+        do_task(self, task, round_number)
+        send_task_results(self, tensor_dict, round_number, task_name)
+        run(self)
+
+TensorDBXAI, extends openfl.databases.TensorDB
+    overridden methods:
+        get_aggregated_tensor(self, tensor_key, collaborator_weight_dict,
+                              aggregation_function)
+    
+AggregationFunctionXAI, implements from openfl.component.aggregation_functions.interface import AggregationFunction
+    overridden methods:
+        call(self, local_tensors, db_iterator, *_)
+
+XAIDataLoader, extends openfl.federated.data.loader.DataLoader
+    overridden methods:
+        __init__
+        get_train_data()
+        get_train_labels()
+        get_train_data_size()

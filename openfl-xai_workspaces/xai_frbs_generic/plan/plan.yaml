@@ -1,0 +1,53 @@
+# Copyright (C) 2023 AI&RD Research Group, Department of Information Engineering, University of Pisa
+# SPDX-License-Identifier: Apache-2.0
+
+aggregator:
+  settings:
+    rounds_to_train: 1
+    aggregation_function_path_template: {"aggregation_function_class_name":"AggregationFunctionXAI", 
+                            "aggregation_function_module_path": "src.Fed_XAI_Classes.aggregation_function_xai",
+                            }
+    model_infos: {"model_name":""}
+  template: src.Fed_XAI_Classes.xai_aggregator.AggregatorXAI
+assigner:
+  settings:
+    task_groups:
+    - name: train
+      percentage: 1.0
+      tasks:
+      - train
+  template: openfl.component.RandomGroupedAssigner
+collaborator:
+  settings:
+  template: src.Fed_XAI_Classes.xai_collaborator.CollaboratorXAI
+compression_pipeline:
+  settings: {}
+  template: openfl.pipelines.NoCompressionPipeline
+data_loader:
+  settings: 
+    num_classes: 1
+    data_path: data
+  template: src.Fed_XAI_Classes.xai_data_loader.XAIDataLoader
+network:
+  settings:
+    agg_addr: aggregator_xai
+    agg_port: 57017
+    cert_folder: cert
+    client_reconnect_interval: 5
+    disable_client_auth: false
+    hash_salt: auto
+    tls: true
+  template: openfl.federation.Network
+task_runner:
+  settings:
+    dict_parameters: {}
+    dict_model: {"model_class_name":"", "model_module_path":""}
+  template: src.Fed_XAI_Classes.xai_runner.XAITaskRunner
+tasks:
+  settings: {}
+  train:
+    function: train
+    kwargs:
+      apply: global
+      metrics:
+      - accuracy

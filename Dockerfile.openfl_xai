@@ -1,0 +1,15 @@
+# Copyright (C) 2023 AI&RD Research Group, Department of Information Engineering, University of Pisa
+# SPDX-License-Identifier: Apache-2.0
+
+FROM intel/openfl:1.3
+
+COPY ./use_case_requirements.txt ./requirements.txt
+
+RUN apt-get update \ 
+	&& apt-get -y install \
+	&& apt-get -y install unzip \
+	&& apt-get install -y python3-pip \
+	&& pip3 install --upgrade pip \
+	&& pip3 install pyopenssl \
+	&& pip3 install -r requirements.txt
+
