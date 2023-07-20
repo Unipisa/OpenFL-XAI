@@ -16,7 +16,7 @@ This work has been developed by the Artificial Intelligence R&D Group at the Dep
 	&emsp;&emsp;
 	<img src="./images/logo-DII.png" alt="tree aggregator cert" style="height: 80px">
 	&emsp;&emsp;
-	<img src="./images/logo-fair.png" alt="tree aggregator cert" style="height: 80px">
+	<img src="./images/logo_fair.png" alt="tree aggregator cert" style="height: 80px">
 </p>
 
 ## Table of Contents
