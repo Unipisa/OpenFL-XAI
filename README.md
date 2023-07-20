@@ -9,7 +9,7 @@ By supporting FL of highly interpretable FRBSs, OpenFL-XAI addresses two key req
 
 The current version of the framework includes the implementation of FL of Takagi-Sugeno-Kang Fuzzy Rule-Based Systems for solving regression problems (please refer to [Bárcena et al., 2022][Barcena2022] for more details). However, the framework is composed by a set of general classes allowing developers to design additional rule-based systems and new aggregation schemes.
 
-This work has been developed by the Artificial Intelligence R&D Group at the Department of Information Engineering, University of Pisa, as part of the activities carried out within [Hexa-X Project, the European Union's Flagship 6G Project][hexa]. OpenFL-XAI has supported research, development, and demonstration activities concerning the FL of XAI models, which has been recently awarded as [key innovation][inno] by the EU Innovation Radar.
+This work has been developed by the Artificial Intelligence R&D Group at the Department of Information Engineering, University of Pisa, as part of the activities carried out within [Hexa-X Project, the European Union's Flagship 6G Project][hexa]. OpenFL-XAI has supported research, development, and demonstration activities concerning the FL of XAI models, which has been recently awarded as [key innovation][inno] by the EU Innovation Radar. This work has been also partially funded by the PNRR - M4C2 - Investimento 1.3, Partenariato Esteso PE00000013 - ``FAIR - Future Artificial Intelligence Research" - Spoke 1 ``Human-centered AI"
 
 <p align="center">
 	<img src="./images/hexa-x_logo_color_large.png" alt="tree aggregator cert" style="height: 80px">
