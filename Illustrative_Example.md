@@ -138,11 +138,13 @@ The `feature_names` variable is initialized with actual feature names of the dat
 #### Model's Global Interpretability
 ```python
 print("number of rules: " + str(model.get_number_of_rules()))
+antecedents, consequents, weights = model.get_fuzzy_rules()
 rules = model.__str__()
 with open("./interpretable_rules.txt","w") as file:
   file.write(rules)  
 ```
-To gain an understanding of the model's global interpretability, we can determine the number of rules using the **get_number_of_rules()** method, and for a comprehensive view of all the rules within the rule base, we can save the output of **\_\_str\_\_()** to a txt file.
+To gain an understanding of the model's global interpretability, we can determine the number of rules using the **get_number_of_rules()** method, retrieve separately antecedents, consequents and weights through the **get_fuzzy_rules()** method, and for a comprehensive view of all the rules within the rule base, we save the output of **\_\_str\_\_()** to a text file. 
+The rules of the FRBS are formatted in an intelligible manner within the text file.
 
 #### Predict
 
