@@ -142,7 +142,7 @@ rules = model.__str__()
 with open("./interpretable_rules.txt","w") as file:
   file.write(rules)  
 ```
-To gain an understanding of the model's global interpretability, we can determine the number of rules using the **get_number_of_rules()** method, and for a comprehensive view of all the rules within the rule base, we can save the output of **__str__()** to a txt file.
+To gain an understanding of the model's global interpretability, we can determine the number of rules using the **get_number_of_rules()** method, and for a comprehensive view of all the rules within the rule base, we can save the output of **\_\_str\_\_()** to a txt file.
 
 #### Predict
 
