@@ -162,6 +162,28 @@ y_truth = np.load("./data/y_test.npy")
 y_pred_and_activated_rules_samples = model.predict_and_get_rule(X_test)
 y_pred = [tup[0] for tup in y_pred_and_activated_rules_samples]
 activated_rules = [tup[1] for tup in y_pred_and_activated_rules_samples]
+
+rule_adopted = model.get_rule_by_index(activated_rules[-1]+1)
+print("last prediction: ")
+print("y_truth: " + str(y_truth[-1]))
+print("y_pred: "+str(y_pred[-1]))
+print("activated rule:")
+print(rule_adopted)
+
+```
+To take vision of the local interpretability of the model, we can adopt the method get_rule_by_index in correspondence of a specific test sample to ascertain which rule has been employed by the model to compute the output. The index passed must be incremented by 1 for implementation reasons. 
+
+
+<p align="center">
+  <img src="images/tsk_example_rule_local_exp.png" alt="cli" style="height: 175px; width: 350px;">
+</p>
+
+
+In addition, we can compute error metrics exploiting the ground truth with the predicted output. 
+```python
+from sklearn.metrics import r2_score
+r2 = r2_score(y_truth, y_pred)
+print(r2)
 ```
 
 ## Illustrative example: Python Command Line Interface
