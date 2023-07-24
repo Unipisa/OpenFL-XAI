@@ -135,7 +135,7 @@ model = fuzzySystem_class(variable_names=feature_names,
 This snippet relies on the implementation of the TSK-FRBS available in the dedicated `openfl-xai_workspaces.xai_tsk_frbs` workspace (Python module `src.model.fuzzySystem`, please refer to [Bárcena et al., 2022][Barcena2022] for more details).
 The `feature_names` variable is initialized with actual feature names of the dataset (in our example, the Mortgage dataset).
 
-### Model's Global Interpretability
+#### Model's Global Interpretability
 ```python
 print("number of rules: " + str(model.get_number_of_rules()))
 rules = model.__str__()
