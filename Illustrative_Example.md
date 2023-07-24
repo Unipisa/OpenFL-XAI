@@ -135,6 +135,15 @@ model = fuzzySystem_class(variable_names=feature_names,
 This snippet relies on the implementation of the TSK-FRBS available in the dedicated `openfl-xai_workspaces.xai_tsk_frbs` workspace (Python module `src.model.fuzzySystem`, please refer to [Bárcena et al., 2022][Barcena2022] for more details).
 The `feature_names` variable is initialized with actual feature names of the dataset (in our example, the Mortgage dataset).
 
+### Model's Global Interpretability
+```python
+print("number of rules: " + str(model.get_number_of_rules()))
+rules = model.__str__()
+with open("./interpretable_rules.txt","w") as file:
+  file.write(rules)  
+```
+To gain an understanding of the model's global interpretability, we can determine the number of rules using the `get_number_of_rules()` method, and for a comprehensive view of all the rules within the rule base, we can save the output of `__str__()` to a txt file.
+
 #### Predict
 
 The inference process is carried out on a dedicated test set stored in Numpy files  `X_test.npy` (array-like with shape `(n_samples, n_features)`) within the `data` folder. 
@@ -142,17 +151,18 @@ The inference process is carried out on a dedicated test set stored in Numpy fil
 ```python
 X_test = np.load("./data/X_test.npy")
 y_pred =  model.predict(X_test)
+y_truth = np.load("./data/y_test.npy")
 ```
 
 The model object also exposes the **predict_and_get_rule** method which returns predictions and activated rules.
 
 ```python
 X_test = np.load("./data/X_test.npy")
+y_truth = np.load("./data/y_test.npy")
 y_pred_and_activated_rules_samples = model.predict_and_get_rule(X_test)
 y_pred = [tup[0] for tup in y_pred_and_activated_rules_samples]
 activated_rules = [tup[1] for tup in y_pred_and_activated_rules_samples]
 ```
-
 
 ## Illustrative example: Python Command Line Interface
 
