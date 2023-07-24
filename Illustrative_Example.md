@@ -175,7 +175,7 @@ To take vision of the local interpretability of the model, we can adopt the meth
 
 
 <p align="center">
-  <img src="images/tsk_example_rule_local_exp.png" alt="cli" style="height: 175px; width: 350px;">
+  <img src="images/tsk_example_rule_local_exp.png" alt="cli" style="height: 200px; width: 550px;">
 </p>
 
 
