@@ -142,7 +142,7 @@ rules = model.__str__()
 with open("./global_models/interpretable_rules.txt","w") as file:
   file.write(rules)  
 ```
-To gain an understanding of the model's global interpretability, we can determine the number of rules using the **get_number_of_rules()** method. For a comprehensive view of all the rules within the rule base, we save the output of **\_\_str\_\_()** to a text file, where the antecedents, consequents and weights imported from files to initialize the model are formatted in an intelligible manner.
+To gain an understanding of the model's global interpretability, we can determine the number of rules using the **get_number_of_rules()** method. For a comprehensive view of all the rules within the rule base, we save the output of **\_\_str\_\_()** to a text file, where the antecedents, consequents and weights employed to initialize the model are formatted in an intelligible manner.
 
 #### Predict
 
@@ -171,7 +171,7 @@ print("activated rule:")
 print(rule_adopted)
 
 ```
-To take vision of the local interpretability of the model, we can adopt the method **get_rule_by_index** in correspondence of a specific test sample to ascertain which rule has been employed by the model to compute the output. The index passed must be incremented by 1 for implementation reasons. 
+To take vision of the local interpretability of the model, we can adopt the method **get_rule_by_index** in correspondence of a specific test sample to ascertain which rule has been adopted by the model to compute the output. The index passed must be incremented by 1 for implementation reasons. 
 
 
 <p align="center">
