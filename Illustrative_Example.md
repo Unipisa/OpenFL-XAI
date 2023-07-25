@@ -135,54 +135,53 @@ model = fuzzySystem_class(variable_names=feature_names,
 This snippet relies on the implementation of the TSK-FRBS available in the dedicated `openfl-xai_workspaces.xai_tsk_frbs` workspace (Python module `src.model.fuzzySystem`, please refer to [Bárcena et al., 2022][Barcena2022] for more details).
 The `feature_names` variable is initialized with actual feature names of the dataset (in our example, the Mortgage dataset).
 
-#### Model's Global Interpretability
+#### Global Interpretability
 ```python
 print("number of rules: " + str(model.get_number_of_rules()))
 rules = model.__str__()
 with open("./global_models/interpretable_rules.txt","w") as file:
   file.write(rules)  
 ```
-To gain an understanding of the model's global interpretability, we can determine the number of rules using the **get_number_of_rules()** method. For a comprehensive view of all the rules within the rule base, we save the output of **\_\_str\_\_()** to a text file, where the antecedents, consequents and weights employed to initialize the model are formatted in an intelligible manner.
+The snippet above allows evaluating the number of rules of the TSK-FRBS (through the **get_number_of_rules** method), which can be used to quantitatively evaluate the global explainability of the model. A comprehensive view of the whole collection of rules can be obtained by saving into a text file the output of the model **\_\_str\_\_** method, which properly converts numeric tensors in a human-readable format.
 
 #### Predict
 
-The inference process is carried out on a dedicated test set stored in Numpy files  `X_test.npy` (array-like with shape `(n_samples, n_features)`) within the `data` folder. 
+The inference process is carried out on a dedicated test set stored in a Numpy file named `X_test.npy` (array-like with shape `(n_samples, n_features)`) within the `data` folder. 
 
 ```python
 X_test = np.load("./data/X_test.npy")
 y_pred =  model.predict(X_test)
-y_truth = np.load("./data/y_test.npy")
+y_true = np.load("./data/y_test.npy")
 ```
 
-The model object also exposes the **predict_and_get_rule** method which returns predictions and activated rules.
+The model object also exposes the **predict_and_get_rule** method which returns predictions and the index of the activated rule.
 
 ```python
 X_test = np.load("./data/X_test.npy")
-y_truth = np.load("./data/y_test.npy")
+y_true = np.load("./data/y_test.npy")
 y_pred_and_activated_rules_samples = model.predict_and_get_rule(X_test)
 y_pred = [tup[0] for tup in y_pred_and_activated_rules_samples]
 activated_rules = [tup[1] for tup in y_pred_and_activated_rules_samples]
 
 rule_adopted = model.get_rule_by_index(activated_rules[-1]+1)
 print("last prediction: ")
-print("y_truth: " + str(y_truth[-1]))
+print("y_true: " + str(y_true[-1]))
 print("y_pred: "+str(y_pred[-1]))
 print("activated rule:")
 print(rule_adopted)
 
 ```
-To take vision of the local interpretability of the model, we can adopt the method **get_rule_by_index** in correspondence of a specific test sample to ascertain which rule has been adopted by the model to compute the output. The index passed must be incremented by 1 for implementation reasons. 
+To take vision of the local interpretability of the model, we can adopt the method **get_rule_by_index** in correspondence of a specific test sample to ascertain which rule has been adopted by the model to compute the output.
 
 
 <p align="center">
   <img src="images/tsk_example_rule_local_exp.png" alt="cli" style="height: 200px; width: 750px;">
 </p>
 
-
-In addition, we can compute error metrics exploiting the ground truth with the predicted output. 
+In addition, we can compute well known regression metrics exploiting the ground truth and predicted values.
 ```python
 from sklearn.metrics import r2_score
-r2 = r2_score(y_truth, y_pred)
+r2 = r2_score(y_true, y_pred)
 print(r2)
 ```
 
