@@ -138,13 +138,11 @@ The `feature_names` variable is initialized with actual feature names of the dat
 #### Model's Global Interpretability
 ```python
 print("number of rules: " + str(model.get_number_of_rules()))
-antecedents, consequents, weights = model.get_fuzzy_rules()
 rules = model.__str__()
 with open("./global_models/interpretable_rules.txt","w") as file:
   file.write(rules)  
 ```
-To gain an understanding of the model's global interpretability, we can determine the number of rules using the **get_number_of_rules()** method, retrieve separately antecedents, consequents and weights through the **get_fuzzy_rules()** method, and for a comprehensive view of all the rules within the rule base, we save the output of **\_\_str\_\_()** to a text file. 
-The rules of the FRBS are formatted in an intelligible manner within the text file.
+To gain an understanding of the model's global interpretability, we can determine the number of rules using the **get_number_of_rules()** method. For a comprehensive view of all the rules within the rule base, we save the output of **\_\_str\_\_()** to a text file, where the antecedents, consequents and weights imported from files to initialize the model are formatted in an intelligible manner.
 
 #### Predict
 
@@ -177,7 +175,7 @@ To take vision of the local interpretability of the model, we can adopt the meth
 
 
 <p align="center">
-  <img src="images/tsk_example_rule_local_exp.png" alt="cli" style="height: 200px; width: 550px;">
+  <img src="images/tsk_example_rule_local_exp.png" alt="cli" style="height: 200px; width: 750px;">
 </p>
 
 
