@@ -171,8 +171,8 @@ print("activated rule:")
 print(rule_adopted)
 
 ```
-To take vision of the local interpretability of the model, we can adopt the method **get_rule_by_index** in correspondence of a specific test sample to ascertain which rule has been adopted by the model to compute the output.
 
+The **get_rule_by_index** method can be used to assess the local interpretability of the model:  the user can retrieve the rule adopted for computing the output value associated with any given input instance, uncovering the inner working of the inference process.
 
 <p align="center">
   <img src="images/tsk_example_rule_local_exp.png" alt="cli" style="height: 200px; width: 750px;">
