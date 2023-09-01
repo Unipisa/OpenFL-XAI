@@ -85,17 +85,18 @@ This project is licensed under [Apache License Version 2.0][License]. By contrib
 - Alessandro Renda ([scholar](https://scholar.google.it/citations?user=13nYgdUAAAAJ)) (alessandro.renda@unipi.it)
 
 # Citations
-1. M. Daole, A. Schiavo, P. Ducange, A. Renda, J. L. Corcuera Bárcena, F. Marcelloni, "OpenFL-XAI: Federated Learning of Explainable Artificial Intelligence Models in Python" (under review)
+1. M. Daole, A. Schiavo, P. Ducange, A. Renda, J. L. Corcuera Bárcena, F. Marcelloni, "OpenFL-XAI: Federated Learning of Explainable Artificial Intelligence Models in Python" Elsevier SoftwareX, Volume 23, 2023, 101505, DOI: https://doi.org/10.1016/j.softx.2023.101505
 
 ```
 @article{openfl-xai_citation,
 	author={Daole, Mattia and Schiavo, Alessio and Corcuera B{\'a}rcena, Jos{\'e} Luis and Ducange, Pietro and Marcelloni, Francesco and Renda, Alessandro},
 	title={OpenFL-XAI: Federated Learning of Explainable Artificial Intelligence Models in Python},
-	journal={Under review},
-	url={},
-	year={},
-	doi={},
-	publisher={}
+	journal = {SoftwareX},
+	volume = {23},
+	pages = {101505},
+	year = {2023},
+	issn = {2352-7110},
+	doi = {https://doi.org/10.1016/j.softx.2023.101505},
 }
 ```
 
