@@ -128,6 +128,12 @@ This project is licensed under [Apache License Version 2.0][License]. By contrib
 ```
 Authors would like to thank Intel® and, in particular, Ing. Dario Sabella for providing hardware support and for the fruitful discussions.
 
+
+# Acknowledgments
+
+This work has been partly funded by the PON 2014-2021 "Research and Innovation", DM MUR 1062/2021, Project title: "Progettazione e sperimentazione di algoritmi di federated learning per data stream mining", PNRR - M4C2 - Investimento 1.3, Partenariato Esteso PE00000013 - "FAIR - Future Artificial Intelligence Research" - Spoke 1 "Human-centered AI" and the PNRR "Tuscany Health Ecosystem" (THE) (Ecosistemi dell’Innovazione) - Spoke 6 - Precision Medicine & Personalized Healthcare (CUP I53C22000780001) under the NextGeneration EU programme, and by the Italian Ministry of University and Research (MUR) in the framework of the FoReLab and CrossLab projects (Departments of Excellence).
+
+
 [inno]: https://www.innoradar.eu/innovation/45988
 [CustomizationGuide]: Customization_Guide.md
 [IllustrativeExample]: Illustrative_Example.md
